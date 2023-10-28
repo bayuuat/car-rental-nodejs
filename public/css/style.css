@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --first-color: rgba(241, 243, 255, 1);
+  --second-color: rgba(13, 40, 166, 1);
+  --third-color: #e5e5e5;
+  --fourth-color: #5cb85f;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+nav {
+  background-color: var(--first-color);
+}
+
+a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: black;
+}
+
+p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+h2 {
+  font-style: normal;
+}
+
+.pxc-7 {
+  padding: 1vh 10vw 1vh 10vw;
+}
+
+.btn {
+  background-color: var(--fourth-color);
+  color: white;
+  width: fit-content;
+  border-radius: 2px;
+  font-weight: 600;
+  border: 1px solid #5cb85f;
+}
+
+.navbar-brand {
+  background-color: var(--second-color);
+  position: absolute;
+  width: 100px;
+  height: 34px;
+  left: 136px;
+  top: 10px;
+}
+
+.navbar-brand-last {
+  background-color: var(--second-color);
+  position: absolute;
+  width: 100px;
+  height: 34px;
+  left: 2px;
+  top: 36px;
+}
+
+#navbar-content {
+  width: 30vw;
+}
+
+#home {
+  background-color: var(--first-color);
+}
+
+.col {
+  margin: 0;
+  padding: 0;
+}
+
+#our-service {
+  padding: 150px 0 0;
+}
+
+#why-us {
+  padding: 150px 0 0;
+}
+
+#why-us .card {
+  transition: 0.2s all ease-in-out;
+}
+
+#why-us .card:hover {
+  box-shadow: rgba(32, 54, 151, 0.2) 0px 2px 8px 0px;
+}
+
+.nav-link {
+  color: black;
+}
+
+#testimonial-content {
+  padding: 150px 0 150px 0;
+}
+
+.icon-badge {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  padding: 24px;
+}
+
+.card-testi {
+  background-color: var(--first-color);
+  border-radius: 20px;
+  border-color: transparent;
+  gap: 3vw;
+  /* width: 619px; */
+  flex-direction: row;
+  height: 270px;
+  margin-right: 20px;
+}
+
+.card-testi .img-photo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.testi-rate {
+  width: 10vw;
+  height: fit-content;
+}
+
+.banner {
+  background-color: var(--second-color);
+  color: white;
+  padding: 10vh 15vw 10vh 15vw;
+  border-radius: 20px;
+  border-color: transparent;
+}
+
+#faq {
+  padding: 20vh 0 20vh 0;
+  height: fit-content;
+}
+
+.accordion-item-custom {
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.accordion-button {
+  border-radius: 4px;
+}
+
+.accordion-button:focus {
+  border: 0;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgb(246, 246, 246);
+}
+
+#footer {
+  padding: 10vh 0 10vh 0;
+}
+
+#footer .icon-group a {
+  background-color: #0d28a6;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-right: 16px;
+}
+
+/* HALAMAN CARI */
+.form-container {
+  margin-top: -50px;
+}
+
+.form-control,
+select,
+select option {
+  font-weight: 300 !important;
+}
+
+::placeholder {
+  font-weight: 300;
+}
+
+.card .car-image{
+  width: 100%;
+  height: 222px;
+  object-fit: cover;
+}
+
+/* variables */
+:root {
+  --primary: #9b26af;
+  --secondary: #711fab;
+  --gray: #999999;
+  --gray-light: #DEDEDE;
+}
+
+.noUi-target {
+  cursor: pointer;
+}
+
+.noUi-target:focus {
+  outline: none;
+}
+
+.noUi-horizontal {
+  height: 9px;
+}
+
+.noUi-connect {
+  background: var(--fourth-color);
+}
+
+.noUi-base {
+  background: var(--gray-light);
+}
+
+.noUi-horizontal .noUi-handle {
+  top: -6px;
+  right: -15px;
+  width: 22px;
+  height: 22px;
+  background: var(--fourth-color);
+  border-radius: 50%;
+  box-shadow: unset;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.noUi-horizontal .noUi-handle::before,
+.noUi-horizontal .noUi-handle::after {
+  content: none;
+}
+
+.noUi-horizontal .noUi-handle:hover {
+  transform: scale(1.1);
+}
+
+/* styles for filter */
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 370px;
+  border-radius: 10px;
+  background: white;
+  padding: 10px;
+}
+
+.filter__label {
+  position: relative;
+  cursor: pointer;
+}
+
+.filter__label::before {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.filter__label:nth-child(1)::before {
+  content: 'from';
+}
+
+.filter__label:nth-child(2)::before {
+  content: 'to';
+}
+
+.filter__input {
+  height: 35px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 0 10px 0 45px;
+  cursor: pointer;
+}
+
+.filter__input:focus {
+  background: rgba(var(--fourth-color), 0.2);
+}
+
+.filter__slider-price {
+  width: 100%;
+  margin: 20px 5px 0;
+}

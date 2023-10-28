@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Binar Car Rental</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top tw-bg-purple-100">
+        <div class="container">
+          <a href="#home">
+            <div style="width: 100px; height: 34px; background: #0d28a6"></div>
+          </a>
+          <button
+            class="navbar-toggler navbar-light"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto fw-medium align-items-center">
+              <li class="nav-item">
+                <a class="nav-link p-3" href="#our-service">Our Service</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3" href="#why-us">Why Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3" href="#testimonial">Testimonial</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3" href="#faq">FAQ</a>
+              </li>
+              <li class="nav-item fw-bold ms-3">
+                <button class="btn" onclick="">Register</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div id="home" class="position-relative">
+        <div
+          class="container d-flex align-items-center"
+          style="min-height: 600px"
+        >
+          <div class="col-12 col-xl-6 home-content align-self-center">
+            <h2 class="fs-1 mb-4 fw-bold">
+              Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)
+            </h2>
+            <p class="mb-5" style="max-width: 468px">
+              Selamat datang di Binar Car Rental. Kami menyediakan mobil
+              kualitas terbaik dengan harga terjangkau. Selalu siap melayani
+              kebutuhanmu untuk sewa mobil selama 24 jam.
+            </p>
+          </div>
+          <img
+            class="img-fluid col-12 col-xl-6 position-absolute bottom-0 end-0"
+            style="width: auto; max-height: 407px"
+            src="https://i.ibb.co/xfn2L6m/img-car.png"
+          />
+        </div>
+      </div>
+    </main>
+
+    <div class="container px-lg-5 position-relative form-container fw-light">
+      <div class="card p-4 justify-content-between">
+        <form id="search-form" class="d-grid form" method="get">
+          <div class="row gx-3">
+            <div class="col-lg">
+              <label for="tipe-driver" class="form-label">Tipe Transmisi</label>
+              <select
+                class="form-select form-item form-control"
+                aria-label="Default select example"
+                placeholder="Pilih Tipe Driver"
+                id="tipe-transmisi"
+                name="transmisi"
+              >
+                <option value="" disable select hidden>
+                  Pilih Tipe Transmisi
+                </option>
+                <option value="Automatic">Automatic</option>
+                <option value="Automanual">Automanual</option>
+                <option value="Manual">Manual</option>
+                <option value="CVT">CVT</option>
+              </select>
+            </div>
+            <div class="col-lg">
+              <label for="available-time" class="form-label">Tanggal</label>
+              <input
+                class="form-control form-item"
+                type="datetime-local"
+                id="available-time"
+                name="tanggal"
+                onchange="updateFormattedDate()"
+              />
+            </div>
+            <div class="col-lg">
+              <label for="range-harga" class="form-label"
+                >Pilih Range Harga</label
+              >
+              <div class="dropdown">
+                <button
+                  id="filter__button"
+                  class="text-start fw-light form-select form-item text-left"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Range Harga
+                </button>
+                <div class="dropdown-menu w-100">
+                  <div class="filter">
+                    <label class="filter__label">
+                      <input
+                        type="text"
+                        class="filter__input border border-secondary"
+                        id="price-from"
+                        name="price-from"
+                      />
+                    </label>
+
+                    <label class="filter__label mt-2">
+                      <input
+                        type="text"
+                        class="filter__input border border-secondary"
+                        id="price-to"
+                        name="price-to"
+                      />
+                    </label>
+
+                    <div
+                      id="sliderPrice"
+                      class="filter__slider-price"
+                      data-min="100000"
+                      data-max="1200000"
+                      data-step="50000"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg">
+              <label for="jumlah-penumpang" class="form-label"
+                >Jumlah Penumpang (optional)</label
+              >
+              <input
+                type="number"
+                placeholder="Jumlah Penumpang"
+                class="form-control form-item"
+                id="jumlah-penumpang"
+                name="penumpang"
+              />
+            </div>
+            <div class="col-auto d-flex align-items-end">
+              <button type="submit" id="load-btn" class="btn btn-cari">
+                Cari Mobil
+              </button>
+              <!-- <button class="btn btn-cari" id="clear-btn" type="reset">
+                  Edit
+                </button> -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="container px-lg-5 mt-4">
+      <div id="cars-container" class="row g-3"></div>
+    </div>
+
+    <footer id="footer" class="container">
+      <div class="d-flex flex-wrap justify-content-between gap-3">
+        <div class="col-12 col-xl-auto pr-5">
+          <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+          <p>binarcarrental@gmail.com</p>
+          <p>081-233-334-808</p>
+        </div>
+
+        <div class="col-12 col-xl-auto pr-5 d-flex flex-column">
+          <a class="nav-link mb-3 fw-bold" href="#our-service">Our Service</a>
+          <a class="nav-link mb-3 fw-bold" href="#why-us">Why Us</a>
+          <a class="nav-link mb-3 fw-bold" href="#testimonial">Testimonial</a>
+          <a class="nav-link mb-3 fw-bold" href="#faq">FAQ</a>
+        </div>
+
+        <div class="col-12 col-xl-auto pr-5 mb-3">
+          <p>Connect with us</p>
+          <div class="d-flex icon-group">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-envelope"></i></a>
+            <a href="#"><i class="bi bi-twitch"></i></a>
+          </div>
+        </div>
+        <div class="col-12 col-xl-auto">
+          <p>Copyright Binar 2023</p>
+          <a href="#home">
+            <div style="width: 100px; height: 34px; background: #0d28a6"></div>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+    <script type="text/javascript" src="./scripts/binar.js"></script>
+    <script type="text/javascript" src="./scripts/app.js"></script>
+    <script type="text/javascript" src="./scripts/car.js"></script>
+    <script type="text/javascript" src="./scripts/main.js"></script>
+    <script>
+      const slider = document.getElementById("sliderPrice");
+      const rangeMin = parseInt(slider.dataset.min);
+      const rangeMax = parseInt(slider.dataset.max);
+      const step = parseInt(slider.dataset.step);
+      const filterInputs = document.querySelectorAll("input.filter__input");
+      const buttonHarga = document.getElementById("filter__button");
+
+      noUiSlider.create(slider, {
+        start: [rangeMin, rangeMax],
+        connect: true,
+        step: step,
+        range: {
+          min: rangeMin,
+          max: rangeMax,
+        },
+
+        // make numbers whole
+        format: {
+          to: (value) => value,
+          from: (value) => value,
+        },
+      });
+
+      // bind inputs with noUiSlider
+      slider.noUiSlider.on("update", (values, handle) => {
+        filterInputs[handle].value = Math.floor(values[handle]);
+      });
+
+      if (params) {
+        const from = Math.floor(params["price-from"] / 1000);
+        const to = Math.floor(params["price-to"] / 1000);
+        buttonHarga.innerHTML = `${from}K - ${to}K`;
+        slider.noUiSlider.set([params["price-from"], params["price-to"]]);
+      }
+
+      slider.noUiSlider.on("update", (values) => {
+        const from = Math.floor(values[0] / 1000);
+        const to = Math.floor(values[1] / 1000);
+        if (values.length >= 2) {
+          buttonHarga.innerHTML = `${from}K - ${to}K`;
+        }
+      });
+
+      filterInputs.forEach((input, indexInput) => {
+        input.addEventListener("change", () => {
+          slider.noUiSlider.setHandle(indexInput, input.value);
+        });
+      });
+    </script>
+  </body>
+</html>
